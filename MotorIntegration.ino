@@ -7,7 +7,7 @@
 #define A      10   // Blue wire
 #define aMinus 12   // Green wire
 #define B      5  // Yellow wire
-#define bMinus 13  // Orange wire
+#define bMinus 7  // Orange wire
 
 float readingX;
 float readingY;
