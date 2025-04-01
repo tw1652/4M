@@ -14,7 +14,7 @@ float readingY;
 float readingZ;
 float humidity = -1;
 float temperature = -300;
-const int led=13;
+//const int led=13;
 int value =4;
 // Define the number of steps per revolution (360° / 18° per step), as per datasheet
 int stepsPerRevolution = 20;
