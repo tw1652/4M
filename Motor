@@ -1,7 +1,7 @@
-#define A      10   // Red wire
-#define aMinus 12   // Blue wire
-#define B      5  // Black wire
-#define bMinus 13  // Green wire
+#define A      7   // Orange wire
+#define aMinus 12   // Green wire
+#define B      10  // Blue wire
+#define bMinus 5  // Yellow wire
 
 // Define the number of steps per revolution (360° / 18° per step), as per datasheet
 int stepsPerRevolution = 20;
