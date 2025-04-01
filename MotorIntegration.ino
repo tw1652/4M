@@ -4,10 +4,10 @@
 #define DHTPin 8
 #define DHTTYPE DHT22
 
-#define A      10   // Blue wire
+#define A      7   // Orange wire
 #define aMinus 12   // Green wire
-#define B      5  // Yellow wire
-#define bMinus 7  // Orange wire
+#define B      10  // Blue wire
+#define bMinus 5  // Yellow wire
 
 float readingX;
 float readingY;
