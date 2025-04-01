@@ -4,17 +4,16 @@
 #define DHTPin 8
 #define DHTTYPE DHT22
 
-#define A      10   // Red wire
-#define aMinus 11   // Blue wire
-#define B      12  // Black wire
-#define bMinus 13  // Green wire
+#define A      10   // Blue wire
+#define aMinus 12   // Green wire
+#define B      5  // Yellow wire
+#define bMinus 13  // Orange wire
 
 float readingX;
 float readingY;
 float readingZ;
 float humidity = -1;
 float temperature = -300;
-//const int led=13;
 int value =4;
 // Define the number of steps per revolution (360° / 18° per step), as per datasheet
 int stepsPerRevolution = 20;
