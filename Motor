@@ -5,6 +5,7 @@
 
 // Define the number of steps per revolution (360° / 18° per step), as per datasheet
 int stepsPerRevolution = 20;
+bool motorStatus = false;
 
 void setup() {
   Serial.begin(9600);
@@ -14,6 +15,8 @@ void setup() {
   pinMode(aMinus, OUTPUT);
   pinMode(B, OUTPUT);
   pinMode(bMinus, OUTPUT);
+
+  Serial.println("press 's' to stop/start motor");
 }
 
 void rotation(int angleInput, int direction){
@@ -21,6 +24,8 @@ void rotation(int angleInput, int direction){
 
   if (direction == 1) { // clockwise
    for (int i = 0; i < stepsPerRevolution; i++) {
+    if (!motorStatus) return; // Stop if motor is not running
+
     // Step 1
     digitalWrite(A, HIGH);
     digitalWrite(aMinus, LOW);
@@ -90,15 +95,16 @@ void rotation(int angleInput, int direction){
 }
 
 void loop() {
-  rotation(20, 1);
+  if (Serial.available()){
+    char command  = Serial.read();
 
-  while (true) { // Stop
+    if (command == 's') {
+      motorStatus = !motorStatus; //change motor status when button pressed
+      Serial.println("motor stopped");
+    }
+  }
 
-    digitalWrite(A, LOW);
-    digitalWrite(aMinus, LOW);
-    digitalWrite(B, LOW);
-    digitalWrite(bMinus, LOW);
-
-    delay(1000);
+  if (motorStatus) {
+    rotation(20, 1);
   }
 }
